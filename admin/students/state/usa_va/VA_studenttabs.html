@@ -1,0 +1,29 @@
+<ul class="tabs">
+	<li ~[if.~[gpv:repType]=SRC]class="selected"[else][/if]>
+		 <a	href="/admin/students/state/stateVA.html?frn=~(studentfrn)">General</a>
+	</li>
+	<li ~[if.~[gpv:repType]=VSE]class="selected"[else][/if]>
+		<a href="/admin/students/state/usa_va/stateVA-SE.html?frn=~(studentfrn)">Special Ed</a>
+	</li>
+	<li ~[if.~[gpv:repType]=SAS]class="selected"[else][/if]>
+		<a href="/admin/students/state/usa_va/VA_StuAttSumm/home.html?frn=~(studentfrn)">Attendance</a>
+	</li>
+	<li ~[if.~[gpv:repType]=SRE]class="selected"[else][/if]>
+		<a href="/admin/students/state/usa_va/stateVA-SRE.html?frn=~(studentfrn)">SRE</a>
+	</li>
+	<li ~[if.~[gpv:repType]=TRA]class="selected"[else][/if]>
+		<a href="/admin/students/state/usa_va/stateVA-Transcript.html?frn=~(studentfrn)">Transcript</a>
+	</li>
+	<li ~[if.~[gpv:repType]=SOL]class="selected"[else][/if]>
+		<a href="/admin/students/state/usa_va/stateVA-SOL.html?frn=~(studentfrn)">SOL Testing</a>
+	</li>
+	<li ~[if.~[gpv:repType]=DCF]class="selected"[else][/if]>
+		<a href="/admin/students/state/usa_va/VA_stateVA.html?frn=~(studentfrn)">Discontinued</a>
+	</li>
+	<li ~[if.~[gpv:repType]=CRDC]class="selected"[else][/if]>
+			<a href="/admin/students/state/usa_va/studentCRDC.html?frn=~(studentfrn)">CRDC</a>
+	</li>
+        <li ~[if.~[gpv:repType]=CFC]class="selected"[else][/if]>
+                <a href="/admin/students/state/usa_va/stateVA-CFC.html?frn=~(studentfrn)">Foster</a>
+        </li>
+</ul>

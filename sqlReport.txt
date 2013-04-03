@@ -1,0 +1,48 @@
+<ReportName>Children in Foster Care</ReportName>
+<ReportTitle>Children in Foster Care</ReportTitle>
+<ReportGroup>Custom State reports</ReportGroup>
+<ReportDescription></ReportDescription>
+<SQLQuery>SELECT
+  s.lastfirst,
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_LegalDistrict'),
+  '130',
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_tuitionPaid'),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_typeOfPlacement'),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_nameOfFosterHome'),
+  ps_customfields.getstudentscf(s.id, 'va_primary_dis_code'),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_ohiDescription'),
+  sum(psada.membershipvalue),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_remedialSummerSchool')
+FROM students s
+JOIN ps_adaadm_defaults_all psada ON s.id = psada.studentid
+JOIN terms t ON t.schoolid = psada.schoolid
+WHERE
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_foster') = 1
+  AND t.yearid = 22
+  and t.isyearrec = 1
+  AND psada.calendardate BETWEEN t.firstday AND t.lastday
+GROUP BY
+  s.lastfirst,
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_LegalDistrict'),
+  '130',
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_tuitionPaid'),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_typeOfPlacement'),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_nameOfFosterHome'),
+  ps_customfields.getstudentscf(s.id, 'va_primary_dis_code'),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_ohiDescription'),
+  ps_customfields.getstudentscf(s.id, 'wps_cfc_remedialSummerSchool')</SQLQuery>
+<ReportHeader><th>Name</th><th>legalDistrict</th><th>receivingDistrict</th><th>Tuition Paid to serving?</th><th>Type of Placement</th><th>Name of Foster Home</th><th>Primary disability code</th><th>OHI Description</th><th>Membership</th><th>Remedial Summer School</th></ReportHeader>
+<CreateStudentSelection>0</CreateStudentSelection>
+<StudentSelectionQuery></StudentSelectionQuery>
+<IncludeRowNumber>0</IncludeRowNumber>
+<OpeninNewWindow>0</OpeninNewWindow>
+<ParameterName1></ParameterName1>
+<ParameterVal1></ParameterVal1>
+<ParameterName2></ParameterName2>
+<ParameterVal2></ParameterVal2>
+<ParameterName3></ParameterName3>
+<ParameterVal3></ParameterVal3>
+<ParameterName4></ParameterName4>
+<ParameterVal4></ParameterVal4>
+<ParameterName5></ParameterName5>
+<ParameterVal5></ParameterVal5>

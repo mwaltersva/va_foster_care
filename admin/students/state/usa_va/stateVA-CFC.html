@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <!-- start right frame -->
+  <head>
+    <title>Virginia State Information</title>
+    ~[wc:commonscripts]
+    <script type="text/javascript" src="/admin/state/usa_va/VA_script.js"></script>
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+<link href="/images/css/print.css" rel="stylesheet" media="print">
+  </head>
+  <body data-validation="exclude" >
+    <form action="/admin/changesrecorded.white.html" method="POST">
+      ~[wc:admin_header_frame_css]
+      <!-- breadcrumb start -->
+      <a href="/admin/home.html" target="_top">Start Page</a> &gt;
+      <a href="/admin/student/home.html?selectstudent=nosearch" target="_top">Student Selection</a> &gt;
+      Foster Care Information
+      <!-- breadcrumb end -->
+      ~[wc:admin_navigation_frame_css]
+      
+      ~[wc:title_student_begin_css]Virginia Foster Care Information~[wc:title_student_end_css]
+      
+      ~[SetPostValue:repType=CFC]
+      ~[x:insertfile;VA_studenttabs.html]
+      <!-- start of content and bounding box -->
+      <div class="box-round">
+
+            <table border="0" cellspacing="0" cellpadding="4" width="100%">
+				<tr class="headerrow">
+					<th colspan="2">Foster Care Information</th>
+				</tr>
+				<tr class="~[evenoddrow]">
+				<td class="bold">Foster Child?</td>
+				<td><input type="checkbox" name="[01]wps_cfc_foster" value=""></td>
+				</tr>
+				<tr class="~[evenoddrow]">
+					<td class="bold">Division number of legal residence.<br>Leave blank if same as enrolled division.</td>
+					<td><input type="text" name="[01]wps_cfc_legaldistrict" value=""></td>
+				</tr>
+				<tr class="~[evenoddrow]">
+					<td class="bold">Tuition was paid to the serving division<br>by the receiving division</td>
+					<td><input type="checkbox" name="[01]wps_cfc_tuitionPaid" value=""></td>
+				</tr>
+				<tr class="~[evenoddrow]">
+					<td class="bold">Type of Placement</td>
+					<td><input type="text" name="[01]wps_cfc_typeOfPlacement" value=""></td>
+				</tr>
+				<tr class="~[evenoddrow]">
+					<td class="bold">Name of Foster Home</td>
+					<td><input type="text" name="[01]wps_cfc_nameOfFosterHome" value=""></td>
+				</tr>
+				~[if.~(va_primary_dis_code)=10]
+				<tr class="~[evenoddrow]">
+					<td class="bold">OHI Description</td>
+					<td><input type="text" name="[01]wps_cfc_ohiDescription" value=""></td>
+				</tr>
+				[/if]
+				<tr class="~[evenoddrow]">
+					<td class="bold">Enrolled in remedial Summer Program<br>
+									following report school year.</td>
+					<td><input type="checkbox" name="[01]wps_cfc_remedialSummerSchool" value=""></td>
+				</tr>
+			</table>
+			<div class="button-row">
+				<input type="hidden" name="ac" value="prim"> ~[submitbutton]
+			</div>	
+</div>
+      <!-- end of content of bounding box -->
+      ~[wc:admin_footer_frame_css]
+    </form>
+  </body>
+</html>
+<!-- end right frame -->
