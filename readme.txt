@@ -1,7 +1,7 @@
 Virginia Children in Foster Care
 
 Enables reporting of children in foster care via PowerSchool. Extract requires the custom SQL
-reports package (tested with version included w/ custom reports bundle @ www.powerdatasolutions.com)
+reports package (tested with version included w/ custom reports bundle @ www.powerdatasolutions.org)
 
 Files:
 sqlReport.txt: Import file for custom SQL reports
